@@ -34,4 +34,10 @@ class MainActivity : AppCompatActivity() {
         startActivity(intentActivity)
     }
 
+    // appeler le QuizzActivity
+    fun onClickQuizz(view: View){
+        val intentActivity = Intent(this, QuizzActivity::class.java)
+        startActivity(intentActivity)
+    }
+
 }
