@@ -4,59 +4,21 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-        <data>
-                <variable
-                    name="myPerson"
-                    type="com.example.enidemo.Person" />
-        </data>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
             tools:context=".MainActivity">
-
-                <!-- bouton d'appel d'une autre activité au clic -->
-                <Button
-                    android:id="@+id/averageCalculator"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    style="?android:attr/buttonBarButtonStyle"
-                    android:text="@string/lancer_calculateur_de_moyennes"
-                    android:onClick="onClick"
-                    tools:ignore="VisualLintButtonSize" />
-
-                <!-- ligne de séparation -->
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/black" />
-
-                <!-- bouton d'appel de l'activité quizz au clic -->
-                <Button
-                    android:id="@+id/quizz"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    style="?android:attr/buttonBarButtonStyle"
-                    android:text="@string/lancer_quizz"
-                    android:onClick="onClickQuizz"
-                    tools:ignore="VisualLintButtonSize" />
-
-                <!-- ligne de séparation -->
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/black" />
-
-                <TextView
-                    android:id="@+id/tvTest"
+                <!--fragment "contenant" les 2 fragments liés-->
+                <fragment
+                    android:id="@+id/navExample"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:textSize="20sp"
-                    android:textAlignment="center"
-                    android:textStyle="bold"
-                    android:paddingTop="10dp"
-                    android:text="@{myPerson.firstName}"/>
+                    android:name="androidx.navigation.fragment.NavHostFragment"
+                    app:defaultNavHost="true"
+                    app:navGraph="@navigation/navigation"
+                    />
 
         </LinearLayout>
 

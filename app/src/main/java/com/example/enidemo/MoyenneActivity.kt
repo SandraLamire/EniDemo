@@ -4,17 +4,17 @@ import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 
 class MoyenneActivity : AppCompatActivity() {
     // tableau qui va récupérer les notes saisies
     private val notes = mutableListOf<Float>()
-    val notesFrancais = mutableListOf<Float>()
-    val notesMaths = mutableListOf<Float>()
-    val notesHistoire = mutableListOf<Float>()
-    val notesBiologie = mutableListOf<Float>()
-
+//    val notesFrancais = mutableListOf<Float>()
+//    val notesMaths = mutableListOf<Float>()
+//    val notesHistoire = mutableListOf<Float>()
+//    val notesBiologie = mutableListOf<Float>()
 
     @SuppressLint("SetTextI18n")
     fun afficherTitre() {
@@ -26,43 +26,47 @@ class MoyenneActivity : AppCompatActivity() {
 
 
     fun onClickButtonAdd(view: View) {
-        // vider le champ "Moyenne générale"
-        val editTextAverage = findViewById<TextView>(R.id.txt_average)
-        editTextAverage.text = ""
+        if(view is Button){
+            // vider le champ "Moyenne générale"
+            val editTextAverage = findViewById<TextView>(R.id.txt_average)
+            editTextAverage.text = ""
 
-        // récupérer le champ "edt_note"
-        val editTextNote = findViewById<EditText>(R.id.edt_note)
-        // récupérer la valeur saisie dans ce champ
-        val noteString = editTextNote.text.toString()
-        // si le champ n'est pas vide
-        if (noteString.isNotEmpty()) {
-            // transformer la saisie en float
-            val note = noteString.toFloat()
-            // ajouter cette saisie au tableau de notes
-            notes.add(note)
-            // vider le champ de saisie
-            editTextNote.text.clear()
-            // afficher les saies dans le logcat pour vérifier le remplissage du tableau
-            println(notes)
+            // récupérer le champ "edt_note"
+            val editTextNote = findViewById<EditText>(R.id.edt_note)
+            // récupérer la valeur saisie dans ce champ
+            val noteString = editTextNote.text.toString()
+            // si le champ n'est pas vide
+            if (noteString.isNotEmpty()) {
+                // transformer la saisie en float
+                val note = noteString.toFloat()
+                // ajouter cette saisie au tableau de notes
+                notes.add(note)
+                // vider le champ de saisie
+                editTextNote.text.clear()
+                // afficher les saies dans le logcat pour vérifier le remplissage du tableau
+                println(notes)
+            }
         }
+
     }
 
     @SuppressLint("SetTextI18n")
     fun onClickButtonStop(view: View) {
-        // récupérer le champ "Moyenne générale"
-        val editTextAverage = findViewById<TextView>(R.id.txt_average)
-        if (notes.isNotEmpty()) {
-            // faire la moyenne des notes du tableau
-            val average = notes.average()
-            // modifier la valeur du champ "Moyenne générale"
-            editTextAverage.text = "Moyenne générale : %.2f".format(average)
-            // vider le tableau de notes
-            notes.clear()
-        } else {
-            editTextAverage.text = ""
+        if(view is Button){
+            // récupérer le champ "Moyenne générale"
+            val editTextAverage = findViewById<TextView>(R.id.txt_average)
+            if (notes.isNotEmpty()) {
+                // faire la moyenne des notes du tableau
+                val average = notes.average()
+                // modifier la valeur du champ "Moyenne générale"
+                editTextAverage.text = "Moyenne générale : %.2f".format(average)
+                // vider le tableau de notes
+                notes.clear()
+            } else {
+                editTextAverage.text = ""
+            }
         }
     }
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -79,39 +83,39 @@ class MoyenneActivity : AppCompatActivity() {
 
     }
 
-
+/*
     // TP4
 
     fun calculAverage(note1: Float, note2: Float, note3: Float): Float {
-        return (note1 + note2 + note3) / 3.0f;
+        return (note1 + note2 + note3) / 3.0f
     }
 
     fun correctionWithoutTableau() {
         // Mettre notes en dur
         // Notes math
-        var noteMath1 = 12.0f
-        var noteMath2 = 8.0f
-        var noteMath3 = 0.2f
+        val noteMath1 = 12.0f
+        val noteMath2 = 8.0f
+        val noteMath3 = 0.2f
 
         // Notes français
-        var noteFrancais1 = 12.0f
-        var noteFrancais2 = 8.0f
-        var noteFrancais3 = 0.2f
+        val noteFrancais1 = 12.0f
+        val noteFrancais2 = 8.0f
+        val noteFrancais3 = 0.2f
 
         // Notes sports
-        var noteSport1 = 12.0f
-        var noteSport2 = 8.0f
-        var noteSport3 = 0.2f
+        val noteSport1 = 12.0f
+        val noteSport2 = 8.0f
+        val noteSport3 = 0.2f
 
 
-        // Calculer la moyenne de chaques matières
-        val averageMath = calculAverage(noteMath1, noteMath2, noteMath3);
-        val averageFrancais = calculAverage(noteFrancais1, noteFrancais2, noteFrancais3);
-        val averageSport = calculAverage(noteSport1, noteSport2, noteSport3);
+        // Calculer la moyenne de chaque matière
+        val averageMath = calculAverage(noteMath1, noteMath2, noteMath3)
+        val averageFrancais = calculAverage(noteFrancais1, noteFrancais2, noteFrancais3)
+        val averageSport = calculAverage(noteSport1, noteSport2, noteSport3)
 
         // Calculer moyenne general (deux manières)
         val averageGeneral = (averageMath + averageFrancais + averageSport) / 3
-        val averageGeneralVersion2 = calculAverage(averageMath, averageFrancais, averageSport);
+        val averageGeneralVersion2 = calculAverage(averageMath, averageFrancais, averageSport)
 
         // Affiche la moyenne generale avec println
         println(String.format("EniDemoTp : Moyenne Generale %f", averageGeneral))
@@ -121,16 +125,15 @@ class MoyenneActivity : AppCompatActivity() {
         // Additionner toute les notes
         var sum = 0.0f
         for (note in notes) {
-            sum += note;
+            sum += note
         }
-//
+
 //        val noteList = listOf(10.0f,10F)
 //        for (i in (0..notes.size)){
 //            noteList.get(i)
-//
 //       }
         // Diviser la somme des notes par le nombre de notes
-        return sum / notes.size;
+        return sum / notes.size
     }
 
     fun correctionWithTableau() {
@@ -152,13 +155,13 @@ class MoyenneActivity : AppCompatActivity() {
         val averageFrancais = francaisGrades.average()
         val averageSport = sportGrades.average()
         */
-        val averageMath = calculAverageTableau(mathGrades);
+        val averageMath = calculAverageTableau(mathGrades)
         val averageFrancais = calculAverageTableau(francaisGrades);
         val averageSport = calculAverageTableau(sportGrades);
 
         // Calculer moyenne generale (deux manières)
         val averageGeneral = (averageMath + averageFrancais + averageSport) / 3
-        val averageGeneralVersion2 = calculAverage(averageMath, averageFrancais, averageSport);
+        val averageGeneralVersion2 = calculAverage(averageMath, averageFrancais, averageSport)
 
         // Affiche la moyenne générale avec println
         println(String.format("EniDemoTp : Moyenne Generale %.2f", averageGeneral))
@@ -169,7 +172,7 @@ class MoyenneActivity : AppCompatActivity() {
         // afficher le nouveau texte
         //averageTextView.text = String.format("Moyenne Générale : %.2f", averageGeneral)
     }
-
+*/
     /*
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
