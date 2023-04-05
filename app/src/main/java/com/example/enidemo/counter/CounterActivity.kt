@@ -14,7 +14,6 @@ class CounterActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_counter)
 
         // récupérer la vue
         val activityCounterBinding = DataBindingUtil.setContentView<ActivityCounterBinding>(this, R.layout.activity_counter)
