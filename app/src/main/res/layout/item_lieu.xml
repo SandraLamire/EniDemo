@@ -63,11 +63,12 @@
                         android:text="@{lieu.description}">
                     </TextView>
 
-                    <!--  Switch -->
+                    <!--  Bouton Switch -->
                     <Switch
                         android:layout_margin="5dp"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"></Switch>
+                        android:layout_height="wrap_content">
+                    </Switch>
 
                 </LinearLayout>
             </LinearLayout>

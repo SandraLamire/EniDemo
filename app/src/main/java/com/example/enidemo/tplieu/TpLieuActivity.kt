@@ -16,7 +16,7 @@ class TpLieuActivity : AppCompatActivity() {
         // Instancier un adapter
         val adapter = ListLieuAdapter()
 
-        // Liaison du recycler view avec mon adapteur
+        // Liaison du lieu view avec mon adapteur
         atlb.rvLieux.adapter = adapter
 
         // Une liste de 3 lieux
@@ -25,7 +25,7 @@ class TpLieuActivity : AppCompatActivity() {
             Lieu("Chez Arthur", "Manoir, attention on est chez un Noble"),
             Lieu("Chez Bastien", "La glissade"))
 
-        // Envoyer ces 3 personne dans le recycler view
+        // Envoyer ces 3 lieux dans la view
         adapter.submitList(listLieux)
     }
 }
