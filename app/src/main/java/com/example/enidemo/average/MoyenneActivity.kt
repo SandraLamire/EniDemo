@@ -1,4 +1,4 @@
-package com.example.enidemo
+package com.example.enidemo.average
 
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import com.example.enidemo.R
 
 class MoyenneActivity : AppCompatActivity() {
     // tableau qui va récupérer les notes saisies

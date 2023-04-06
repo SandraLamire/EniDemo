@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.enidemo.Person
 import com.example.enidemo.databinding.ItemPersonBinding
 
 class ListPersonsAdapter : ListAdapter<Person, ListPersonsAdapter.ViewHolder>(PersonDiffCallback()){

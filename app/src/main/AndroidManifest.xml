@@ -4,6 +4,7 @@
     <!-- ajouter permission d'utiliser le réseau internet -->
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <!--texte associé au label dans res/>values/strings.xml-->
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -16,26 +17,29 @@
         <activity
             android:name=".room.RoomActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <!-- à commenter pour changer de page d'accueil-->
+            <!-- <intent-filter> -->
+            <!--    <action android:name="android.intent.action.MAIN" /> -->
+            <!--    <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity
             android:name=".tplieu.TpLieuActivity"
             android:exported="true">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+            <!-- à commenter pour changer de page d'accueil-->
+            <!-- <intent-filter> -->
+            <!--    <action android:name="android.intent.action.MAIN" /> -->
+            <!--    <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity
             android:name=".recyclerView.RecyclerViewActivity"
             android:exported="true">
-
+            <!-- à commenter pour changer de page d'accueil-->
+            <!-- à décommenter pour en faire la page de lancement : il faut 1 seul launcher -->
             <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!--    <action android:name="android.intent.action.MAIN" /> -->
+            <!--    <category android:name="android.intent.category.LAUNCHER" /> -->
             <!-- </intent-filter> -->
         </activity>
         <activity
@@ -44,40 +48,53 @@
         <activity
             android:name=".counter.CounterActivity"
             android:exported="true">
-
+            <!-- à commenter pour changer de page d'accueil-->
+            <!-- à décommenter pour en faire la page de lancement : il faut 1 seul launcher -->
             <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!--    <action android:name="android.intent.action.MAIN" /> -->
+            <!--    <category android:name="android.intent.category.LAUNCHER" /> -->
             <!-- </intent-filter> -->
         </activity>
         <activity
             android:name=".api.DemoAPIActivity"
             android:exported="true">
-
-            <!-- à enlever pour changer la page de lancement -->
+            <!-- à commenter pour changer de page d'accueil-->
+            <!-- à décommenter pour en faire la page de lancement : il faut 1 seul launcher -->
             <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!--    <action android:name="android.intent.action.MAIN" /> -->
+            <!--    <category android:name="android.intent.category.LAUNCHER" /> -->
             <!-- </intent-filter> -->
         </activity>
         <activity
             android:name=".QuizzActivity"
             android:exported="false"
-            android:label="@string/app_name_custom" />
+            android:label="@string/app_name_custom" >
+            <!-- à commenter pour changer de page d'accueil-->
+            <!-- à décommenter pour en faire la page de lancement : il faut 1 seul launcher -->
+            <!-- <intent-filter> -->
+            <!--    <action android:name="android.intent.action.MAIN" /> -->
+            <!--    <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
         <activity
-            android:name=".MoyenneActivity"
-            android:exported="false" />
+            android:name=".average.MoyenneActivity"
+            android:exported="false">
+            <!-- à commenter pour changer de page d'accueil-->
+            <!-- à décommenter pour en faire la page de lancement : il faut 1 seul launcher -->
+            <!-- <intent-filter> -->
+            <!--    <action android:name="android.intent.action.MAIN" /> -->
+            <!--    <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">
-
-            <!-- à remettre pour changer la page de lancement : il faut 1 seul launcher -->
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
+            <!-- à commenter pour changer de page d'accueil-->
+            <!-- à décommenter pour en faire la page de lancement : il faut 1 seul launcher -->
+             <intent-filter>
+                 <action android:name="android.intent.action.MAIN" />
+                 <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
         </activity>
     </application>
 

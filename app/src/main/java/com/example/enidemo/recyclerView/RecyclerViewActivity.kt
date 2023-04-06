@@ -3,7 +3,6 @@ package com.example.enidemo.recyclerView
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
-import com.example.enidemo.Person
 import com.example.enidemo.R
 import com.example.enidemo.databinding.ActivityRecyclerViewBinding
 
